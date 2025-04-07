@@ -16,7 +16,7 @@ def main():
     # Model start command
     model_parser = subparsers.add_parser("train", help="Train the model")
     model_parser.add_argument("--epochs", type=int, default=50, help="Number of training epochs")
-    model_parser.add_argument("--existing-data", type=bool, default=False, help="Train from existing data")
+    model_parser.add_argument("--existing-data", type=bool, default=False, help="Train from existing model")
 
     model_parser = subparsers.add_parser("test", help="Test the model")
     model_parser.add_argument("--n-elements", type=int, default=5, help="Number of elements to test")
