@@ -3,8 +3,6 @@ from keras.api.layers import Input, Conv2D, MaxPooling2D, concatenate, Conv2DTra
 from Model.metrics import PrecisionMetric, RecallMetric, IoUMetric
 from tensorflow.python import keras
 
-
-################################################################
 def unet_model(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS):
     # Build the model
     inputs = Input(shape = (IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS))

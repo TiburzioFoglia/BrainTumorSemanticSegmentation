@@ -22,11 +22,11 @@ def resize(img_dir):
 
 
 def resize_all():
-    resize("train/")
-    resize("train_masks/")
-    resize("valid/")
-    resize("valid_masks/")
-    resize("test/")
-    resize("test_masks/")
+    resize("Dataset/train/")
+    resize("Dataset/train_masks/")
+    resize("Dataset/valid/")
+    resize("Dataset/valid_masks/")
+    resize("Dataset/test/")
+    resize("Dataset/test_masks/")
 
 #resize_all()

@@ -37,20 +37,20 @@ def create_masks(annotations, image_dir, mask_dir, label=""):
 
 
 def make_masks():
-    train_path = "train/"
-    test_path = "test/"
-    val_path = "valid/"
+    train_path = "Dataset/train/"
+    test_path = "Dataset/test/"
+    val_path = "Dataset/valid/"
 
-    with open('train/_annotations.coco.json', 'r') as f:
+    with open('Dataset/train/_annotations.coco.json', 'r') as f:
         train_annotations = json.load(f)
-    with open('test/_annotations.coco.json', 'r') as f:
+    with open('Dataset/test/_annotations.coco.json', 'r') as f:
         test_annotations = json.load(f)
-    with open('valid/_annotations.coco.json', 'r') as f:
+    with open('Dataset/valid/_annotations.coco.json', 'r') as f:
         val_annotations = json.load(f)
 
-    create_masks(train_annotations, train_path, 'train_masks/', label="Train")
-    create_masks(val_annotations, val_path, 'valid_masks/', label="Validation")
-    create_masks(test_annotations, test_path, 'test_masks/', label="Test")
+    create_masks(train_annotations, train_path, 'Dataset/train_masks/', label="Train")
+    create_masks(val_annotations, val_path, 'Dataset/valid_masks/', label="Validation")
+    create_masks(test_annotations, test_path, 'Dataset/test_masks/', label="Test")
 
     print('Mask creation complete')
 

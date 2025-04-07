@@ -1,5 +1,3 @@
-import json
-import pickle
 from Model.unet_model import unet_model   #Use defined unet model
 from keras.api.utils import normalize
 from tensorflow.python import keras
@@ -9,9 +7,9 @@ from PIL import Image
 import numpy as np
 from matplotlib import pyplot as plt
 
-# Data initialization --------------------------------------------------------------------------------------------------
-
 def run_model(training = False, epochs = 50, existing_data = False, n_training_elements = 5):
+
+# Data initialization --------------------------------------------------------------------------------------------------
 
     train_image_directory = 'Dataset/train/'
     train_mask_directory = 'Dataset/train_masks/'
@@ -96,7 +94,6 @@ def run_model(training = False, epochs = 50, existing_data = False, n_training_e
 
     history = []
     if training:
-        print("Training...")
         history = model.fit(
             train_image_dataset,
             train_mask_dataset,
@@ -157,7 +154,7 @@ def run_model(training = False, epochs = 50, existing_data = False, n_training_e
             ground_truth = test_mask_dataset[test_img_number]
             test_img_norm = test_img[:, :, 0][:, :, None]
             test_img_input = np.expand_dims(test_img_norm, 0)
-            #Predict and threshold for values above 0.2 probability
+            #Predict and threshold for pixels values above 0.2 probability
             prediction = (model.predict(test_img_input)[0, :, :, 0] > 0.2).astype(np.uint8)
 
             plt.figure(figsize=(16, 8))
