@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project to is dedicated to Semantic Segmentation of brain tumors, which involves classifying every pixel in an image as part of a tumor or non-tumor region. 
+This project is dedicated to Semantic Segmentation of brain tumors, which involves classifying every pixel in an image as part of a tumor or non-tumor region. 
 It uses data from an external source which must be downloaded manually, then processed before running the main program.
 
 ---
