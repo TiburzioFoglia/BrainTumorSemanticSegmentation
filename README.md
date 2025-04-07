@@ -8,37 +8,36 @@ It uses data from an external source which must be downloaded manually, then pro
 ---
 
 ## 📁 Project Structure
-
+```
 BrainTumorSemanticSegmentation/ 
 ├── Dataset/  # Folder for storing the dataset and related scripts
 ├── Model/    # Contains classes to define unet model and saved models with relative training logs
 ├── unet.py   # Define the important parts to run the training and testing processes
 ├── main.py   # Entry point for running the program 
 └── README.md
-
+```
 ---
 
 ## 📥 Dataset Setup
 
 1. **Download the Dataset**  
-   Download the required dataset from [**Dataset Database Name**](https://www.kaggle.com/datasets/pkdarabi/brain-tumor-image-dataset-semantic-segmentation/).
+   Download the required dataset from [**Brain Tumor Image DataSet : Semantic Segmentation**](https://www.kaggle.com/datasets/pkdarabi/brain-tumor-image-dataset-semantic-segmentation/).
 
 2. **Add the Dataset**  
    Place the downloaded dataset folders into the `Dataset/` folder in the root of the project directory. The final structure should look like this:
 
+   ```
    Dataset/
    ├── test/
    ├── train/
    ├── valid/
    ├── coco_to_masks.py
    └── resize_images.py
-
+   ```
    
 ---
 
 ## ⚙️ Install Dependencies
-
-Make sure you have Python 3.8+ installed.
 
 ```bash
 pip install -r requirements.txt
@@ -90,7 +89,7 @@ You can now run the program:
 
    Example:
    ```bash
-   python main.py train --n-elements 5
+   python main.py test --n-elements 5
    ```
 
 ---
