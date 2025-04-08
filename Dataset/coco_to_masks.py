@@ -27,7 +27,8 @@ def create_masks(annotations, image_dir, mask_dir, label=""):
 
         # Create mask
         mask = np.zeros((image.shape[0], image.shape[1]), dtype=np.uint8)
-        cv2.fillPoly(mask, [segmentation], color=(255, 255, 255))
+        if ann['category_id'] == 2: #class Tumor (1)
+            cv2.fillPoly(mask, [segmentation], color=(255, 255, 255))
 
         # Save mask
         cv2.imwrite(mask_path, mask)
